@@ -1,0 +1,4 @@
+A package that converts a vanilla ubuntu into a dream machine.
+
+To use:
+wget https://raw.github.com/jgillis/Clean-install/master/bootstrap.sh && sh bootstrap.sh
