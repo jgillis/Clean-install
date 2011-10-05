@@ -1,4 +1,4 @@
-sudo apt-get install aptitude
+sudo apt-get -y install aptitude
 sudo aptitude update
 ./general.sh
 ./development.sh
