@@ -1,8 +1,8 @@
 sudo apt-get -y install aptitude
 sudo aptitude update
 
+./registerbashrc bashrc
 ./myreps.sh
-registerbashrc bashrc
 
 ./general.sh
 ./development.sh
