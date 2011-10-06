@@ -59,7 +59,7 @@ else
 	wget https://github.com/jgillis/Utilities/tarball/master && tar -xvf master && mv jgillis-Utilities*  ~/tools/utilities
 	cd ~ && wget https://github.com/jgillis/Clean-install/tarball/master && tar -xvf master && mv jgillis-Clean-install*  clean-install
 fi
-echo "Okay, your off the hook now. I will continue automatically"
+echo "Okay, you're off the hook now. I will continue automatically"
 read -p "Presss any key to continue"  DUMMY
 cd ~/tools/utilities && ./install.sh
 cd ~/clean-install && sudo sh ./install.sh
