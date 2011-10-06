@@ -19,10 +19,6 @@ if [ ! -f ~/.ssh/id_rsa.pub ]; then
 	read -p "What is your name? " NAME
 	echo "" | ssh-keygen -t rsa -C $EMAIL
 fi
-read -p "Would you like to have SAMBA? (Y/N)" ANSWERSAMBA
-if [ "$ANSWERSAMBA" = "Y" ]; then
-	sudo smbpasswd -a `whoami`
-fi
 if [ "$ANSWERREP" = "Y" ]; then
 	mkdir -p ~/.ssh
 	cd ~/.ssh
