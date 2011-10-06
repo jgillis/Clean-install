@@ -8,26 +8,28 @@ if [ -d clean-install ]; then
 rm -rf clean-install
 fi
 read -p "Would you like to have repositories available? (Y/N)" ANSWER
+if [ ! -f ~/.ssh/id_rsa.pub ]; then
+	read -p "What is your e-mail? " EMAIL
+	echo "" | ssh-keygen -t rsa -C $EMAIL
+fi
+
 if [ "$ANSWER" = "Y" ]; then
 	mkdir -p ~/.ssh
 	cd ~/.ssh
 
-	sudo aptitude -y install xclip
-
+	sudo apt-get -y install xclip
 
 	if [ ! -f id_rsa.pub ]; then
-	read -e -p "What is your e-mail? " EMAIL
-	echo "" | ssh-keygen -t rsa -C $EMAIL
-	echo ""
-	echo "************************************************************"
-	echo "Your public key has been generated and put on the clipboard."
-	echo ""
-	echo "Navigate to https://github.com/account/ssh and paste the key there."
+		echo ""
+		echo "************************************************************"
+		echo "Your public key has been generated and put on the clipboard."
+		echo ""
+		echo "Navigate to https://github.com/account/ssh and paste the key there."
 	else
-	echo ""
-	echo "************************************************************"
-	echo "Your public key has been put on the clipboard."
-	echo "Navigate to https://github.com/account/ssh and paste the key there."
+		echo ""
+		echo "************************************************************"
+		echo "Your public key has been put on the clipboard."
+		echo "Navigate to https://github.com/account/ssh and paste the key there."
 	fi
 	cat id_rsa.pub | xclip
 	cat id_rsa.pub
@@ -42,8 +44,9 @@ if [ "$ANSWER" = "Y" ]; then
 	fi
 	KEYS=`grep "github.com" ~/.ssh/known_hosts`
 	if [ "$KEYS" = "" ]; then
-	echo "github.com" |  ssh-keyscan -f - -t rsa >> ~/.ssh/known_hosts
+		echo "github.com" |  ssh-keyscan -f - -t rsa >> ~/.ssh/known_hosts
 	fi
+	sudo apt-get -y install git
 	cd ~/tools && git clone git@github.com:jgillis/Utilities.git utilities
 	cd ~ && git clone git@github.com:jgillis/Clean-install.git clean-install
 else
