@@ -1,2 +1,2 @@
 
-sudo aptitude -y install automake
+sudo aptitude -y install automake cmake
