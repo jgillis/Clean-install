@@ -1,6 +1,9 @@
 sudo apt-get -y install aptitude
 sudo aptitude update
 
+mkdir -p ~/programs
+mkdir -p ~/temp
+
 registerbashrc bashrc
 ./myreps.sh
 
