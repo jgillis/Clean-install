@@ -31,5 +31,5 @@ if [ "$ANSWERSAMBA" = "Y" ]; then
 	writable = yes
 	" >> /etc/samba/smb.conf
 	sudo restart smbd
-	echo "Done. net use x: \\192.168.56.101\home * /user:$ME"
+	echo "Done. net use x: \\\\192.168.56.101\\home * /user:$ME"
 fi
