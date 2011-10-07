@@ -57,7 +57,7 @@ else
 	mkdir -p ~/tools
 	wget https://github.com/jgillis/Utilities/tarball/master && tar -xvf master && mv jgillis-Utilities*  ~/tools/utilities
 	rm master
-	cd ~ && wget https://github.com/jgillis/Clean-install/tarball/master && tar -xvf master && mv jgillis-Clean-install*  clean-install
+	cd ~ && wget https://github.com/jgillis/Clean-install/tarball/master && tar -xvf master && mv jgillis-Clean-install*  ~/clean-install
 	rm master
 fi
 echo "Okay, you're off the hook now. I will continue automatically"
