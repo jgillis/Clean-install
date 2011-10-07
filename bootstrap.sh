@@ -64,4 +64,3 @@ cd ~/tools/utilities && ./install.sh
 cd ~/clean-install && sudo sh ./install.sh
 cd ~
 rm bootstrap.sh
-rm master
