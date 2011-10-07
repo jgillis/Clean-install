@@ -14,12 +14,12 @@ if [ -d clean-install ]; then
 rm -rf clean-install
 fi
 read -p "Would you like to have repositories available? (Y/N)" ANSWERREP
-if [ ! -f ~/.ssh/id_rsa.pub ]; then
-	read -p "What is your e-mail? " EMAIL
-	read -p "What is your name? " NAME
-	echo "" | ssh-keygen -t rsa -C $EMAIL
-fi
 if [ "$ANSWERREP" = "Y" ]; then
+  if [ ! -f ~/.ssh/id_rsa.pub ]; then
+	  read -p "What is your e-mail? " EMAIL
+	  read -p "What is your name? " NAME
+	  echo "" | ssh-keygen -t rsa -C $EMAIL
+  fi
 	mkdir -p ~/.ssh
 	cd ~/.ssh
 
@@ -56,7 +56,9 @@ if [ "$ANSWERREP" = "Y" ]; then
 else
 	mkdir -p ~/tools
 	wget https://github.com/jgillis/Utilities/tarball/master && tar -xvf master && mv jgillis-Utilities*  ~/tools/utilities
+	rm master
 	cd ~ && wget https://github.com/jgillis/Clean-install/tarball/master && tar -xvf master && mv jgillis-Clean-install*  clean-install
+	rm master
 fi
 echo "Okay, you're off the hook now. I will continue automatically"
 read -p "Presss any key to continue"  DUMMY
