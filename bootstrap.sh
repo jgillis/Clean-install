@@ -62,6 +62,7 @@ else
 fi
 echo "Okay, you're off the hook now. I will continue automatically"
 read -p "Presss any key to continue"  DUMMY
+export PATH=$PATH:~/tools/utilities
 cd ~/tools/utilities && ./install.sh
 cd ~/clean-install && sudo sh ./install.sh
 cd ~
