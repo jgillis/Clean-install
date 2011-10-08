@@ -33,3 +33,12 @@ if [ "$ANSWERSAMBA" = "Y" ]; then
 	sudo restart smbd
 	echo "Done. net use x: \\\\192.168.56.101\\home * /user:$ME"
 fi
+read -p "Would you like to have a gateway? (Y/N)" ANSWERGATEWAY
+if [ "$ANSWERSAMBA" = "Y" ]; then
+  echo "First execute this in your host: https://github.com/jgillis/Clean-install/blob/master/winhost.bat"
+  e=`whoami`
+  sudo mkdir -p /home/gatewayhost
+  sudo chown $e /home/gatewayhost
+  sudo mount -t vboxsf gateway /home/gatewayhost
+  sudo uniqueappend "gateway   /home/gatewayhost   vboxsf   defaults  0   0" /etc/fstab
+fi
