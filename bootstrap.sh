@@ -48,6 +48,7 @@ if [ "$ANSWERREP" = "Y" ]; then
 	if [ "$KEYS" = "" ]; then
 		echo "github.com" |  ssh-keyscan -f - -t rsa >> ~/.ssh/known_hosts
 	fi
+        sudo apt-get update
 	sudo apt-get -y install git
 	git config --global user.name $NAME
 	git config --global user.email $EMAIL
