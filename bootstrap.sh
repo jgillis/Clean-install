@@ -48,6 +48,7 @@ if [ "$ANSWERREP" = "Y" ]; then
 	if [ "$KEYS" = "" ]; then
 		echo "github.com" |  ssh-keyscan -f - -t rsa >> ~/.ssh/known_hosts
 	fi
+        sudo apt-get update
 	sudo apt-get -y install git
 	git config --global user.name $NAME
 	git config --global user.email $EMAIL
@@ -64,6 +65,7 @@ echo "Okay, you're off the hook now. I will continue automatically"
 read -p "Presss any key to continue"  DUMMY
 export PATH=$PATH:~/tools/utilities
 cd ~/tools/utilities && ./install.sh
+source ~/.bashrc
 cd ~/clean-install && sudo sh ./install.sh
 cd ~
 rm bootstrap.sh
