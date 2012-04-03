@@ -64,6 +64,7 @@ fi
 echo "Okay, you're off the hook now. I will continue automatically"
 read -p "Presss any key to continue"  DUMMY
 export PATH=$PATH:~/tools/utilities
+echo $ANSWERREP > ~/clean-install/ANSWERREP
 sudo apt-get install aptitude
 cd ~/tools/utilities && ./install.sh
 source ~/.bashrc
