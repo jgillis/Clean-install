@@ -1,4 +1,4 @@
-sudo aptitude -y install automake cmake libpcre++-dev byacc yodl build-essential checkinstall apt-file valgrind python-psutil
+sudo aptitude -y install automake cmake libpcre++-dev byacc yodl build-essential checkinstall apt-file valgrind python-psutil python-yaml
 
 # opencv deps
 sudo aptitude -y install libavcodec-dev libswscale-dev libgstreamer0.10-dev libgstreamer-plugins-base0.10-dev libv4l-dev libjasper-dev libavformat-dev libunicap2-dev libunicapgtk2 libxine-dev intltool
